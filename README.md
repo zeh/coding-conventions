@@ -117,9 +117,9 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
 
 #### When looping through a list, temporary names for the item at a given position (when used) are the singular of the list name
 
-    var buttons:Vector.<Buttons> = getListOfButtons();
+    var buttons:Vector.<PageButton> = getListOfButtons();
     var i:int;
-    var button:Button;
+    var button:PageButton;
     for (i = 0; i < buttons.length; i++) {
         button = buttons[i];
         button.doSomething();
