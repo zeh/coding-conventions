@@ -107,16 +107,17 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
 #### List/collection names are always plurals (ending with an "s")
 
     // Java
-    ArrayList<Button> buttons = new ArrayList<Buttons>();
+    ArrayList<ListButton> buttons = new ArrayList<ListButton>();
     
     // ActionScript
-    var buttons:Vector.<Buttons> = new Vector.<Buttons>();
+    var boxes:Vector.<DisplayBox> = new Vector.<DisplayBox>();
     
     // JavaScript
     var names = [];
 
 #### When looping through a list, temporary names for the item at a given position (when used) are the singular of the list name
 
+    var buttons:Vector.<Buttons> = getListOfButtons();
     var i:int;
     var button:Button;
     for (i = 0; i < buttons.length; i++) {
