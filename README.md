@@ -60,12 +60,14 @@ One exception is single-line IFs for short lines. This is ok:
 Variable naming
 ---------------
 
-#### Variable names start with lowercase characters and then use uppercase letters on new words.
+#### Variable names start with a lower case characters, and then each successive word in the name starts with an upper case letter.
 
 Examples:
 
+    x
+    total
     oneVariable
-    userName
+    numRows
     tempVariable
 
 #### Certain compound words are common words and shouldn't have the second word capitalized.
@@ -100,4 +102,24 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
 
     public ProductButton(String __caption) {
         caption = __caption;
+    }
+
+#### List/collection names are always plurals (ending with an "s")
+
+    // Java
+    ArrayList<Button> buttons = new ArrayList<Buttons>();
+    
+    // ActionScript
+    var buttons:Vector.<Buttons> = new Vector.<Buttons>();
+    
+    // JavaScript
+    var names = [];
+
+#### When looping through a list, temporary names for the item at a given position (when used) are the singular of the list name
+
+    var i:int;
+    var button:Button;
+    for (i = 0; i < buttons.length; i++) {
+        button = buttons[i];
+        button.doSomething();
     }
