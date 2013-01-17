@@ -12,6 +12,10 @@ I've always had some coding conventions in my head. However, after reading [id S
 
 They will change over time. Input is of course welcome, but as any convention goes, much of what I have here is either highly subjective or conforming to my own thought processes. That is to say, your mileage may vary and that is OK.
 
+#### Other references
+
+* [Google's C++ coding conventions](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml) (thanks to Zero|DPX on ShackNews)
+
 
 General
 -------
