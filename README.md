@@ -10,7 +10,9 @@ Obviously enough, these are my own, and may differ from other people's conventio
 
 I've always had some coding conventions in my head. However, after reading [id Software's Doom 3 Coding Style document](https://docs.google.com/document/d/1YBSlKzCplo2YkRgewn6lsNPNCX4W9OAotJRsAJywtTE/edit), I've been more inspired to write my own document (this document also reuses large chunks of id Software's one). That is what follows.
 
-They will change over time. Input is of course welcome, but as any convention goes, much of what I have here is either highly subjective or conforming to my own thought processes. That is to say, your mileage may vary and that is OK.
+They will change over time. Not all of my code follow all of these conventions, because it may have been written when I was still using a different convention.
+
+Input is of course welcome, but as any convention goes, much of what I have here is either highly subjective or conforming to my own thought processes. That is to say, your mileage may vary and that is OK.
 
 #### Other references
 
