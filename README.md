@@ -4,7 +4,7 @@ Zeh's Coding Conventions
 Introduction
 ------------
 
-These are the coding conventions I have adopted over time when writing code.
+These are the coding style conventions I have adopted over time when writing code.
 
 Obviously enough, these are my own, and may differ from other people's conventions. However, I'm documenting them here so it can make reading my code easier, and help myself formalize my reasoning behind some of the conventions adopted.
 
@@ -17,6 +17,7 @@ Input is of course welcome, but as any convention goes, much of what I have here
 #### Other references
 
 * [Google's C++ coding conventions](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml) (thanks to Zero|DPX on ShackNews)
+* [Google's JavaScript coding conventions](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 
 
 General
@@ -92,7 +93,7 @@ In certain cases, similar words should be capitalized because they mean somethin
 
 #### Function parameters start with __ (double underline)
 
-Function and method parameters start with a double underline to differentiate them from other variables or members of an object.
+Function and method parameters start with a double underline to easily differentiate them from other variables or members of an object.
 
 In generic functions or methods:
 
