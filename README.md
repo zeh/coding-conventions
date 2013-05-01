@@ -25,20 +25,29 @@ General
 
 #### Files use real tabs that equal 4 spaces.
 
+It just does.
+
+
 #### Empty lines have no trailing spaces.
+
+Save those bytes for a more noble cause.
+
 
 #### Use trailing braces everywhere (if, else, functions, etc).
 
 Reason: compactness.
 
-    if ( x ) {
+    if (x) {
+        // ...
     }
 
 
 #### The else statement starts on the same line as the last closing brace.
 
-    if ( x ) {
+    if (x) {
+        // ...
     } else {
+        // ...
     }
 
 
@@ -46,7 +55,7 @@ Reason: compactness.
 
 Reason: clarity and easiness of expanding/contracting a block without having to add/remove braces.
 
-    if ( x ) {
+    if (x) {
         something();
     } else {
         somethingElse();
@@ -54,14 +63,14 @@ Reason: clarity and easiness of expanding/contracting a block without having to 
 
 Instead of
 
-    if ( x )
+    if (x)
         something();
     else
         somethingElse();
 
 One exception is single-line IFs for short lines. This is ok:
 
-    if ( x ) something();
+    if (x) something();
 
 
 Variable naming
@@ -77,6 +86,7 @@ Examples:
     numRows
     tempVariable
 
+
 #### Certain compound words are common words and shouldn't have the second word capitalized.
 
 When in doubt, do a Google search and see how a word is commonly used (especially in Wikipedia).
@@ -89,9 +99,10 @@ Examples of common compound words that shouldn't be capitalized in the middle:
 In certain cases, similar words should be capitalized because they mean something else (but should generally be avoided  because they can create confusion).
 
     toolTip // A tool's tip string
-    userName // The user's name
+    userName // The user's name (e.g. if there's userAge, userType, userId, etc)
 
-#### Function parameters start with __ (double underline)
+
+#### Function/method parameters start with __ (double underline)
 
 Function and method parameters start with a double underline to easily differentiate them from other variables or members of an object.
 
@@ -111,6 +122,7 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
         caption = __caption;
     }
 
+
 #### List/collection names are always plurals (ending with an "s")
 
     // Java
@@ -122,6 +134,7 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
     // JavaScript
     var names = [];
 
+
 #### When looping through a list, temporary names for the item at a given position (when used) are the singular of the list name
 
     var buttons:Vector.<PageButton> = getListOfButtons();
@@ -131,3 +144,43 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
         button = buttons[i];
         button.doSomething();
     }
+
+
+#### Booleans start with `is` or `has` (even if it's a getter)
+
+Avoid other prefixes. `was` doesn't have a clear connotation; if something "was destroyed" but was brought back to life, `wasDestroyed` is technically true, but doesn't reflect its current state.
+
+    isOld
+    hasChildren
+    hasLoggedLunch
+    isDestroyed
+    
+TODO
+----
+
+Everything below here is temporary.
+    
+Function/method naming
+----------------------
+
+Scoping
+-------
+
+Where to declare local variables? i in loops use inside scope?
+
+When to use composition and inheritance? When to use interfaces?
+
+Standard headers/comments block?
+
+Order?
+
+Indent variable declarations with tabs
+
+Always make declarations final when possible
+
+How to mark pure functions?
+
+Avoid function overloading by type alone - use specific named functions? Types are not reliable and different parameters may have redundant types
+
+Order in classes - constructor, private, public, getter/setters?
+Get/setter syntax?
