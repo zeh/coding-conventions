@@ -185,7 +185,7 @@ This avoids confusion on whether a variable can be set or not, and what's the al
         _maxWidth = __value;
     }
 
-The exception is when the returned value must be calculcated from something else, e.g.:
+The exception is when the returned value must be calculated from something else, e.g.:
 
     public function get numItems():int  {
         return list.length;
@@ -198,7 +198,7 @@ The exception is when the returned value must be calculcated from something else
 
 This avoids conflicts and confusion with local naming of properties.
 
-#### Native getter/setters should have no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)).
+#### Native getter/setters should have no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science%29).
 
 As often as possible, the getter/setter functions should not change any of its instance's state (other than the obvious changes required by the setter).
 
