@@ -154,11 +154,91 @@ Avoid other prefixes. `was` doesn't have a clear connotation; if something "was 
     hasChildren
     hasLoggedLunch
     isDestroyed
-    
+
+
+#### Temporary methods and variables used for testing should start with `debug_`.
+
+Those should not be made into production, or should only be used in debug states.
+
+    debug_stats
+    debug_totalMemory
+    debug_restart()
+    debug_simulateUserEntry()
+
+Getter/setters
+--------------
+
+#### Getter/setters are a good thing if used wisely.
+
+Getter/setters are good especially if you're tweening a value, since they can be used more transparently by tweening engines.
+
+#### Getters/setters should only exist if both the getter and the setter exist. They should act invisibly, like a normal variable would.
+
+This avoids confusion on whether a variable can be set or not, and what's the alternative.
+
+#### Getters/setters should always refer to a private property. The private variable has the same name, but starts with an underline.
+
+    public function get maxWidth():Number {
+        return _maxWidth;
+    }
+    public function set maxWidth(__value:Number):void {
+        _maxWidth = __value;
+    }
+
+The exception is when the returned value must be calculcated from something else, e.g.:
+
+    public function get numItems():int  {
+        return list.length;
+    }
+    public function set numItems(__value:int):void {
+        list.length = __value;
+    }
+
+#### In ActionScript and others, the name of the parameter received by the setter method is always `__value`.
+
+This avoids conflicts and confusion with local naming of properties.
+
+#### Native getter/setters should have no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)).
+
+As often as possible, the getter/setter functions should not change any of its instance's state (other than the obvious changes required by the setter).
+
+The important exception for this is when getter/setters are used for a value that's not directly tied to a variable, but is instead calculated on the fly as necessary and often cached.
+
+    public function numSelectedItems():int  {
+        if (isNumSelectedItemsDirty) {
+            // Recalculate number
+            _numSelectedItems = 0;
+            for (var i:int = 0; i < items.length; i++) {
+                if (items[i].selected) _numSelectedItems++;
+            }
+
+            // Mark as calculated
+            isNumSelectedItemsDirty = false;
+        }
+        return _numSelectedItems;
+    }
+
+Often, however, such getter/setters should be used as methods/functions rather than native getter/setters.
+
+#### If a property only has a getter or a setter, use normal methods/functions (Java style) instead of native getter/setters.
+
+This makes it clear it is read-only.
+
+    public function getNumItems():int  {
+        return list.length;
+    }
+
+The lone setter is more rare, because it would mean you're setting something that can't be read later (can't think of a solid reason for that behavior).
+
+    public function setAlpha(__value:Number):void  {
+        _alpha = __value;
+    }
+
+
 TODO
 ----
 
-Everything below here is temporary.
+Everything below is temporary.
     
 Function/method naming
 ----------------------
