@@ -137,6 +137,8 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
 
 #### When looping through a list, temporary names for the item at a given position (when used) are the singular of the list name
 
+Normal loop:
+
     var buttons:Vector.<PageButton> = getListOfButtons();
     var i:int;
     var button:PageButton;
@@ -145,6 +147,12 @@ In the constructor of a class, it prevents forcing the use of `this.` and creati
         button.doSomething();
     }
 
+Simpler loop, when possible:
+
+    var buttons:Vector.<PageButton> = getListOfButtons();
+    for each (button:PageButton in buttons) {
+        button.doSomething();
+    }
 
 #### Booleans start with `is` or `has` (even if it's a getter)
 
